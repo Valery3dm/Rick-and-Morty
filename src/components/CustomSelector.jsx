@@ -18,7 +18,7 @@ const Selector = ({
             {el.label}
           </InputLabel>
           <Select
-            labelId={`simple-select-${el.label}-label`}
+            labelid={`simple-select-${el.label}-label`}
             id={`simple-select-${el.label}`}
             value={currentValue(el.label)}
             label={el.label}
