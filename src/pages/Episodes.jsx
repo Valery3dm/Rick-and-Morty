@@ -36,9 +36,11 @@ export const Episodes = () => {
     episode
   }) => ({
     id,
-    name,
-    cel1: air_date,
-    cel2: episode
+    data: [
+      name,
+      air_date,
+      episode
+    ]
   }))
 
   const tableHeadData = ['Name', 'Air date', 'Episodes'];
