@@ -1,8 +1,10 @@
 import React from "react";
-import InputLabel from "@mui/material/InputLabel";
-import MenuItem from "@mui/material/MenuItem";
-import FormControl from "@mui/material/FormControl";
-import Select from "@mui/material/Select";
+import {
+  FormControl,
+  InputLabel,
+  MenuItem,
+  Select
+} from "@mui/material";
 import { Box } from "@mui/system";
 
 const Selector = ({
@@ -11,7 +13,7 @@ const Selector = ({
   handleFilterChange,
 }) => {
   return (
-    <Box sx={{ minWidth: 120 }}>
+    <Box sx={{ minWidth: 120, mt: 1, mb: 1 }}>
       {filterDataCharacters.map((el, idx) => (
         <FormControl key={idx} sx={{ m: 1, minWidth: 120 }}>
           <InputLabel id={`simple-select-${el.label}-label`}>

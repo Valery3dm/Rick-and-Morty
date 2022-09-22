@@ -1,5 +1,5 @@
-export { Characters } from './Characters';
-export { Episodes } from './Episodes';
-export { Locations } from './Locations';
+export { Characters } from './characters/Characters';
+export { Episodes } from './episodes/Episodes';
+export { Locations } from './locations/Locations';
 export { WatchList } from './WatchList';
 export { NotFoundPage } from './NotFoundPage';

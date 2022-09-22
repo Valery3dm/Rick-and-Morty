@@ -6,6 +6,7 @@ import {
   CardMedia,
   Typography,
 } from "@mui/material";
+
 import CardModal from "./CardModal";
 
 const CharacterCard = ({

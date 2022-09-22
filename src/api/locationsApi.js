@@ -1,5 +1,4 @@
-
-const baseUrl = 'https://rickandmortyapi.com/api';
+import { baseUrl } from "./constants";
 
 export const getLocationsData = async (pattern, page = 1, nameFilter = '', typeFilter = '', dimensionFilter = '') => {
   try {

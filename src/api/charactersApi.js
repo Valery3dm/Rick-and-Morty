@@ -1,5 +1,4 @@
-
-const baseUrl = 'https://rickandmortyapi.com/api';
+import { baseUrl } from "./constants";
 
 export const getCharactersData = async (pattern, page = 1, gender = '', status = '', species = '') => {
   try {

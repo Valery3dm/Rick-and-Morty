@@ -7,11 +7,12 @@ import {
   fetchCharactersData,
   setFilterCharacters,
   setPageCharacters,
-} from "../store/characters/actions";
+} from "../../store/characters/actions";
 
-import CharacterCard from "../components/CharacterCard";
-import Selector from "../components/CustomSelector";
-import CustomPagination from "../components/CustomPagination";
+import CharacterCard from "../../components/CharacterCard";
+import CustomPagination from "../../hooks/CustomPagination";
+import Selector from "../../hooks/CustomSelector";
+import { filterDataCharacters } from "./constants";
 
 export const Characters = () => {
   const dispatch = useDispatch();
@@ -36,21 +37,6 @@ export const Characters = () => {
   const handleFilterChange = (event, filterName) => {
     dispatch(setFilterCharacters(event.target.value, filterName));
   };
-
-  const filterDataCharacters = [
-    {
-      label: 'gender',
-      values: ['', 'female', 'male', 'genderless', 'unknown']
-    },
-    {
-      label: 'status',
-      values: ['', 'alive', 'dead', 'unknown']
-    },
-    {
-      label: 'species',
-      values: ['', 'human', 'alien', 'unknown']
-    }
-  ];
 
   const currentValue = (label) => {
     switch(label) {

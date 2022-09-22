@@ -1,12 +1,15 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import CustomInput from '../components/CustomInput';
-import CustomTable from '../components/CustomTable';
+
 import {
   fetchLocationsData,
   setLocationsFilters,
   setPageLocations
-} from '../store/locations/actions';
+} from '../../store/locations/actions';
+
+import CustomInput from '../../hooks/CustomInput';
+import CustomTable from '../../hooks/CustomTable';
+import { filterDataLocations, tableHeadData } from './constants';
 
 export const Locations = () => {
   const dispatch = useDispatch();
@@ -43,9 +46,6 @@ export const Locations = () => {
       dimension
     ]
   }))
-
-  const tableHeadData = ['Name', 'Type', 'Dimension'];
-  const filterDataLocations = ['name', 'type', 'dimension'];
 
   const currentValue = (item) => {
     switch(item) {

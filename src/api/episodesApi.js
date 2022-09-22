@@ -1,4 +1,4 @@
-const baseUrl = 'https://rickandmortyapi.com/api';
+import { baseUrl } from "./constants";
 
 export const getEpisodesData = async (pattern, page = 1, nameFilter = '') => {
   try {
@@ -8,6 +8,6 @@ export const getEpisodesData = async (pattern, page = 1, nameFilter = '') => {
     return data;
 
   } catch (error) {
-    console.error(error)
+    console.log(error)
   }
 }

@@ -1,12 +1,15 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
+
 import {
   fetchEpisodesData,
   setEpisodesNameFilter,
   setPageEpisodes
-} from '../store/episodes/actions';
-import CustomTable from '../components/CustomTable';
-import CustomInput from '../components/CustomInput';
+} from '../../store/episodes/actions';
+
+import CustomTable from '../../hooks/CustomTable';
+import CustomInput from '../../hooks/CustomInput';
+import { filterDataLocations, tableHeadData } from './constants';
 
 
 export const Episodes = () => {
@@ -42,9 +45,6 @@ export const Episodes = () => {
       episode
     ]
   }))
-
-  const tableHeadData = ['Name', 'Air date', 'Episodes'];
-  const filterDataLocations = ['name'];
 
   const currentValue = (item) => {
     if (item) {

@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
 import MenuIcon from "@mui/icons-material/Menu";
 import AdbIcon from "@mui/icons-material/Adb";
 
@@ -13,7 +12,7 @@ import {
   Menu,
   MenuItem,
   Toolbar,
-  Typography
+  Typography,
 } from "@mui/material";
 
 const pages = [
@@ -100,11 +99,7 @@ const NavBar = () => {
             >
               {pages.map(({ title, url }) => (
                 <Link to={`/${url}`} key={title.toLowerCase()}>
-                  <MenuItem
-                    onClick={handleCloseNavMenu}
-                  >
-                    {title}
-                  </MenuItem>
+                  <MenuItem onClick={handleCloseNavMenu}>{title}</MenuItem>
                 </Link>
               ))}
             </Menu>

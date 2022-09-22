@@ -8,29 +8,27 @@ import {
   Typography,
 } from "@mui/material";
 
-const ToDoList = ({acc, handleStatus, handleDelete}) =>  (
-    <List
-      sx={{ display: "flex", flexDirection: "column", alignItems: "center" }}
-    >
-      {acc.map((item) => (
-        <Card sx={{ minWidth: 200, maxWidth: "60%", mt: 8 }} key={item.id}>
-          <CardContent onClick={() => handleStatus(item.id)}>
-            <Typography
-              variant="h5"
-              component="div"
-              sx={item.completed ? { textDecoration: "line-through" } : {}}
-            >
-              {item.input}
-            </Typography>
-          </CardContent>
-          <CardActions>
-            <Button size="small" onClick={() => handleDelete(item.id)}>
-              Delete
-            </Button>
-          </CardActions>
-        </Card>
-      ))}
-    </List>
-  );
+const ToDoList = ({ acc, handleStatus, handleDelete }) => (
+  <List sx={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+    {acc.map((item) => (
+      <Card sx={{ minWidth: 200, maxWidth: "60%", mt: 8 }} key={item.id}>
+        <CardContent onClick={() => handleStatus(item.id)}>
+          <Typography
+            variant="h5"
+            component="div"
+            sx={item.completed ? { textDecoration: "line-through" } : {}}
+          >
+            {item.input}
+          </Typography>
+        </CardContent>
+        <CardActions>
+          <Button size="small" onClick={() => handleDelete(item.id)}>
+            Delete
+          </Button>
+        </CardActions>
+      </Card>
+    ))}
+  </List>
+);
 
 export default ToDoList;
