@@ -11,7 +11,7 @@ import {
 import React from "react";
 import { useDispatch } from "react-redux";
 
-const TableComponent = ({
+const CustomTable = ({
   rows,
   countPages,
   currentPage,
@@ -51,4 +51,4 @@ const TableComponent = ({
   );
 };
 
-export default TableComponent;
+export default CustomTable;

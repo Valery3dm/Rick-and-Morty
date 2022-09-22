@@ -4,7 +4,9 @@ const initialState = {
   episodes: {
     currentPage: 1,
     countPages: 0,
-    nameFilter: '',
+    filterValues: {
+      nameInput: ''
+    },
     data: []
   }
 }
@@ -30,13 +32,16 @@ const episodesReducer = (state = initialState, { type, payload }) => {
           currentPage: payload?.num
         }
       }
-    case types.SET_EPISODES_FILTER_VALUE:
+    case types.SET_EPISODES_FILTERS:
       return {
         ...state,
         episodes: {
           ...state.episodes,
           currentPage: 1,
-          nameFilter: payload?.filterValue
+          filterValues: {
+            ...state.episodes.filterValues,
+            [payload.filterInput]: payload?.filterValue
+          }
         }
       }
     default:

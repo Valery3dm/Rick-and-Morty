@@ -5,11 +5,11 @@ import { Box } from "@mui/system";
 
 import {
   fetchCharactersData,
-  setGenderFilterCharacters,
+  setFilterCharacters,
   setPageCharacters,
 } from "../store/characters/actions";
 import CharacterCard from "../components/CharacterCard";
-import Selectors from "../components/Selectors";
+import Selector from "../components/CustomSelector";
 
 export const Characters = () => {
   const dispatch = useDispatch();
@@ -32,7 +32,7 @@ export const Characters = () => {
   }, [currentPage, gender, status, species]);
 
   const handleFilterChange = (event, filterName) => {
-    dispatch(setGenderFilterCharacters(event.target.value, filterName));
+    dispatch(setFilterCharacters(event.target.value, filterName));
   };
 
   const filterDataCharacters = [
@@ -63,7 +63,7 @@ export const Characters = () => {
 
   return (
     <Box>
-      <Selectors 
+      <Selector 
         filterDataCharacters={filterDataCharacters}
         currentValue={currentValue}
         handleFilterChange={handleFilterChange}

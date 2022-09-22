@@ -15,7 +15,7 @@ export const setPageEpisodes = num => ({
   payload: { num }
 });
 
-export const setEpisodesNameFilter = filterValue => ({
-  type: types.SET_EPISODES_FILTER_VALUE,
-  payload: { filterValue }
+export const setEpisodesNameFilter = (filterValue, filterInput) => ({
+  type: types.SET_EPISODES_FILTERS,
+  payload: { filterValue, filterInput }
 });
