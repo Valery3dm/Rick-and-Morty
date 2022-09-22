@@ -8,9 +8,9 @@ import {
   Typography,
 } from "@mui/material";
 
-const ToDoList = ({ acc, handleStatus, handleDelete }) => (
+const ToDoList = ({ list, handleStatus, handleDelete }) => (
   <List sx={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-    {acc.map((item) => (
+    {list.map((item) => (
       <Card sx={{ minWidth: 200, maxWidth: "60%", mt: 8 }} key={item.id}>
         <CardContent onClick={() => handleStatus(item.id)}>
           <Typography

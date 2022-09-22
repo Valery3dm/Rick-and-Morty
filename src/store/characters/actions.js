@@ -19,3 +19,7 @@ export const setFilterCharacters = (filterValue, filterName) => ({
     type: types.SET_FILTER_VALUE_CHARACTERS,
     payload: { filterValue, filterName }
 });
+
+export const setCharactersLoadError = () => ({
+    type: types.SET_CHARACTERS_LOAD_ERROR
+});

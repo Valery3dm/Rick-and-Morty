@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Grid } from "@mui/material";
+import { Grid, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 
 import {
@@ -20,18 +20,13 @@ export const Characters = () => {
     data,
     currentPage,
     countPages,
-    filterValues: {
-      gender,
-      status,
-      species
-    }
-  } = useSelector(
-    (state) => state.charactersReducer.characters
-  );
+    filterValues: { gender, status, species },
+    isError,
+  } = useSelector((state) => state.charactersReducer);
 
   useEffect(() => {
     dispatch(fetchCharactersData(currentPage, gender, status, species));
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentPage, gender, status, species]);
 
   const handleFilterChange = (event, filterName) => {
@@ -39,37 +34,43 @@ export const Characters = () => {
   };
 
   const currentValue = (label) => {
-    switch(label) {
-      case 'gender':
-        return gender
-      case 'status':
-        return status
+    switch (label) {
+      case "gender":
+        return gender;
+      case "status":
+        return status;
       default:
-        return species
+        return species;
     }
-  }
+  };
 
   return (
     <Box>
-      <Selector 
+      <Selector
         filterDataCharacters={filterDataCharacters}
         currentValue={currentValue}
         handleFilterChange={handleFilterChange}
       />
-      <Grid container spacing={2}>
-        {data.map((character) => (
-          <Grid item xs={6} sm={4} md={2} key={character?.id}>
-            <CharacterCard
-              character={character}
-            />
+      {!isError ? (
+        <>
+          <Grid container spacing={2}>
+            {data.map((character) => (
+              <Grid item xs={6} sm={4} md={2} key={character?.id}>
+                <CharacterCard character={character} />
+              </Grid>
+            ))}
           </Grid>
-        ))}
-      </Grid>
-      <CustomPagination
-        countPages={countPages}
-        currentPage={currentPage}
-        handlerPageChange={setPageCharacters}
-      />
+          <CustomPagination
+            countPages={countPages}
+            currentPage={currentPage}
+            handlerPageChange={setPageCharacters}
+          />
+        </>
+      ) : (
+        <Typography id="error" variant="h6" component="h2">
+          Nothing found
+        </Typography>
+      )}
     </Box>
   );
 };

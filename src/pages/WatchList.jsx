@@ -14,33 +14,33 @@ const getLocalItems = () => {
 
 export const WatchList = () => {
   const [input, setInput] = useState("");
-  const [acc, setAcc] = useState(getLocalItems() || []);
+  const [list, setList] = useState(getLocalItems() || []);
 
   useEffect(() => {
-    localStorage.setItem("watchList", JSON.stringify(acc));
-  }, [acc]);
+    localStorage.setItem("watchList", JSON.stringify(list));
+  }, [list]);
 
   const handleSave = (input) => {
     if (input) {
       const id = `${Math.random()}${input.slice(0, 4)}`;
-      setAcc([
+      setList([
         {
           id,
           input,
           completed: false,
         },
-        ...acc,
+        ...list,
       ]);
     }
     setInput("");
   };
 
   const handleDelete = (id) => {
-    setAcc(acc.filter((el) => el.id !== id));
+    setList(list.filter((el) => el.id !== id));
   };
 
   const handleStatus = (id) => {
-    const changedStatus = acc.map((el) => {
+    const changedStatus = list.map((el) => {
       if (el.id === id) {
         return {
           ...el,
@@ -49,7 +49,7 @@ export const WatchList = () => {
       }
       return el;
     });
-    setAcc(changedStatus);
+    setList(changedStatus);
   };
 
   return (
@@ -67,7 +67,7 @@ export const WatchList = () => {
       />
       <Button onClick={() => handleSave(input)}>Save</Button>
       <ToDoList 
-        acc={acc}
+        list={list}
         handleStatus={handleStatus}
         handleDelete={handleDelete}
       />

@@ -19,3 +19,7 @@ export const setEpisodesNameFilter = (filterValue, filterInput) => ({
   type: types.SET_EPISODES_FILTERS,
   payload: { filterValue, filterInput }
 });
+
+export const setEpisodesLoadError = () => ({
+  type: types.SET_EPISODES_LOAD_ERROR
+});

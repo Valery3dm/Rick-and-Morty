@@ -8,6 +8,6 @@ export const getEpisodesData = async (pattern, page = 1, nameFilter = '') => {
     return data;
 
   } catch (error) {
-    console.log(error)
+    return error;
   }
 }

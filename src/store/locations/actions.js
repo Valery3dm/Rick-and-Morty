@@ -19,3 +19,7 @@ export const setLocationsFilters = (filterValue, filterInput) => ({
   type: types.SET_LOCATIONS_FILTERS,
   payload: { filterValue, filterInput }
 });
+
+export const setLocationsLoadError = () => ({
+  type: types.SET_LOCATIONS_LOAD_ERROR
+});
