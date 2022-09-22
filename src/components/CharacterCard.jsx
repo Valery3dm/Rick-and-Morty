@@ -1,11 +1,13 @@
 import React from "react";
-import Card from "@mui/material/Card";
-import CardContent from "@mui/material/CardContent";
-import CardMedia from "@mui/material/CardMedia";
-import Typography from "@mui/material/Typography";
-import { CardActionArea } from "@mui/material";
-import Modal from '@mui/material/Modal';
-import Box from '@mui/material/Box';
+import {
+  Box,
+  Card,
+  CardActionArea,
+  CardContent,
+  CardMedia,
+  Modal,
+  Typography
+} from "@mui/material";
 
 const CharacterCard = ({ character }) => {
   const [open, setOpen] = React.useState(false);
@@ -44,6 +46,7 @@ const CharacterCard = ({ character }) => {
           </CardContent>
         </CardActionArea>
       </Card>
+
       <Modal
         open={open}
         onClose={handleClose}

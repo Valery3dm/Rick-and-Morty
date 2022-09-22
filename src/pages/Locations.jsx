@@ -37,9 +37,11 @@ export const Locations = () => {
     dimension
   }) => ({
     id,
-    name,
-    cel1: type,
-    cel2: dimension
+    data: [
+      name,
+      type,
+      dimension
+    ]
   }))
 
   const tableHeadData = ['Name', 'Type', 'Dimension'];

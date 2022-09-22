@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Grid, Pagination } from "@mui/material";
+import { Grid } from "@mui/material";
 import { Box } from "@mui/system";
 
 import {
@@ -8,8 +8,10 @@ import {
   setFilterCharacters,
   setPageCharacters,
 } from "../store/characters/actions";
+
 import CharacterCard from "../components/CharacterCard";
 import Selector from "../components/CustomSelector";
+import CustomPagination from "../components/CustomPagination";
 
 export const Characters = () => {
   const dispatch = useDispatch();
@@ -77,10 +79,10 @@ export const Characters = () => {
           </Grid>
         ))}
       </Grid>
-      <Pagination
-        count={countPages}
-        page={currentPage}
-        onChange={(_, num) => dispatch(setPageCharacters(num))}
+      <CustomPagination
+        countPages={countPages}
+        currentPage={currentPage}
+        handlerPageChange={setPageCharacters}
       />
     </Box>
   );
