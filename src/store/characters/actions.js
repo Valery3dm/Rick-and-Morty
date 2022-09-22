@@ -15,7 +15,7 @@ export const setCharacters = characters => ({
     payload: { characters }
 });
 
-export const setGenderFilterCharacters = (filterValue, filterName) => ({
+export const setFilterCharacters = (filterValue, filterName) => ({
     type: types.SET_FILTER_VALUE_CHARACTERS,
     payload: { filterValue, filterName }
 });

@@ -1,6 +1,6 @@
 import { call, put, spawn } from "redux-saga/effects";
+import { getCharactersData } from "../../api/charactersApi";
 
-import { getApiData } from "../../api/fetchData";
 import { setCharacters } from "./actions";
 
 export function* fetchCharactersDataSaga({ payload: { page, gender, status, species } }) {
@@ -8,6 +8,6 @@ export function* fetchCharactersDataSaga({ payload: { page, gender, status, spec
 }
 
 export function* loadCharacters(page, gender, status, species) {
-  const characters = yield call(getApiData, 'character', page, gender, status, species);
+  const characters = yield call(getCharactersData, 'character', page, gender, status, species);
   yield put(setCharacters(characters))
 }
