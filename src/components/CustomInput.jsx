@@ -6,14 +6,13 @@ const CustomInput = ({
   currentValue,
   handleFilterChange,
   pageName
-}) => {
-  return (
-    <>
+}) => (
+    <Box sx={{display: 'flex', flexDirection: 'row', flexWrap: "wrap"}}>
       {filterDataLocations.map((item) => (
-        <Box key={item}>
+        <Box key={item} mr={4}>
           <InputLabel id={`simple-${pageName}-search-${item}-label`}>{item}</InputLabel>
           <Input
-            labelId={`simple-${pageName}-search-${item}-label`}
+            labelid={`simple-${pageName}-search-${item}-label`}
             id={`simple-${pageName}-${item}-search`}
             label={`${item}Input`}
             value={currentValue(item)}
@@ -21,8 +20,6 @@ const CustomInput = ({
           />
         </Box>
       ))}
-    </>
+    </Box>
   );
-};
-
 export default CustomInput;
