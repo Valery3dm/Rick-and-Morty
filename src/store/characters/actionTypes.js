@@ -1,0 +1,5 @@
+export const LOAD_CHARACTERS_DATA = 'characters/LOAD_CHARACTERS_DATA';
+export const SET_PAGE_CHARACTERS = 'characters/SET_PAGE_CHARACTERS';
+export const SET_CHARACTERS = 'characters/SET_CHARACTERS';
+export const SET_FILTER_VALUE_CHARACTERS = 'characters/SET_FILTER_VALUE_CHARACTERS';
+export const SET_CHARACTERS_LOAD_ERROR = 'characters/SET_CHARACTERS_LOAD_ERROR';
